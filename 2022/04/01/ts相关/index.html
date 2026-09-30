@@ -104,7 +104,7 @@
                     <ul class="menu">
                         
                         <li role="presentation" class="text-center">
-                            <a href="/blog/"><i class="fa "></i>
+                            <a href="/"><i class="fa "></i>
                                 首页</a>
                         </li>
                         
@@ -153,12 +153,20 @@
 </div>
         
         
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                1643</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
     </div>
     
     <div class="post-body post-content">
         <p>内部模块 - 命名空间</p>
 <p>外部模块 - 模块</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一个模块中 如果要导出多个变量可以使用</span></span><br><span class="line"><span class="keyword">export</span> &#123;add, min, ...<span class="keyword">function</span>&#125;</span><br><span class="line"><span class="keyword">import</span> &#123;add, min&#125; <span class="keyword">from</span> <span class="string">&#x27;filePath&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果该模块中只导出一个对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Person</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Person</span> <span class="keyword">from</span> <span class="string">&#x27;filePath&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// .js文件重命名为.ts 一些模块不能被识别，可以转换为ts的导入方式，或者声明</span></span><br><span class="line"><span class="comment">//js的写法</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="built_in">require</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line">foo.<span class="title function_">doStuff</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//ts的语句</span></span><br><span class="line"><span class="keyword">import</span> foo = <span class="built_in">require</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line">foo.<span class="title function_">doStuff</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//cmd规范导出模块</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = foo;</span><br><span class="line"><span class="comment">//使用ts的写法</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> = foo;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一个模块中 如果要导出多个变量可以使用</span></span><br><span class="line"><span class="keyword">export</span> &#123;add, min, ...<span class="keyword">function</span>&#125;</span><br><span class="line"><span class="keyword">import</span> &#123;add, min&#125; <span class="keyword">from</span> <span class="string">&#x27;filePath&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果该模块中只导出一个对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Person</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Person</span> <span class="keyword">from</span> <span class="string">&#x27;filePath&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// .js文件重命名为.ts 一些模块不能被识别，可以转换为ts的导入方式，或者声明</span></span><br><span class="line"><span class="comment">//js的写法</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="built_in">require</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line">foo.<span class="title function_">doStuff</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//ts的语句</span></span><br><span class="line"><span class="keyword">import</span> foo = <span class="built_in">require</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line">foo.<span class="title function_">doStuff</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//cmd规范导出模块</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span>
+</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = foo;</span><br><span class="line"><span class="comment">//使用ts的写法</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span>
+</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> = foo;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p><code>调用时 “!”</code> 的用法</p>
@@ -185,12 +193,18 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-    <a href="/blog/2022/04/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9/" class="pre-post btn btn-default" title='搭建个人静态博客站点'>
+    <a href="/blog/2022/04/01/Github%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9%E5%AD%90%E8%B7%AF%E5%BE%84/" class="pre-post btn btn-default" title='Github站点子路径展示不同项目'>
         <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
         <span class="hidden-xs">
-            搭建个人静态博客站点</span>
+            Github站点子路径展示不同项目</span>
     </a>
     
+    
+    <a href="/blog/2022/04/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9/" class="next-post btn btn-default" title='搭建个人静态博客站点'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            搭建个人静态博客站点</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
     
 </div>
 
