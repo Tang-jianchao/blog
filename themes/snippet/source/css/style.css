@@ -1570,9 +1570,8 @@ pre .javascript .function {
   #article-toc {
     display: none;
   }
-  
   .content-wrap .m-post {
-    padding: 100px;
+    padding: 0px;
   }
   .widget #search-form #result-wrap {
     left: -25px;
