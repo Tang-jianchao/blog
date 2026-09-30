@@ -1109,6 +1109,9 @@ pre {
    copyright
 ====================================================*/
 .copyright {
+  /* position: absolute;
+  width: 100%;
+  bottom: 0; */
   background: #111;
   font-size: 13px;
   text-align: center;
@@ -1239,6 +1242,8 @@ pre {
   color: #fff;
   background-color: #ff8140;
   border: 1px solid #ff8140;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 .reward .reward-wrap:hover .reward-box {
   display: block;
@@ -1565,6 +1570,7 @@ pre .javascript .function {
   #article-toc {
     display: none;
   }
+  
   .content-wrap .m-post {
     padding: 0px;
   }
