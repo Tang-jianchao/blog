@@ -339,3 +339,171 @@
     white-space: nowrap;
   }
 }
+
+/* ====================================================
+ * 9. 判断台账 /judgements/ 与首页待验证提示
+ * ==================================================== */
+.judge-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 10px;
+}
+.judge-kpi {
+  flex: 1 1 70px;
+  min-width: 70px;
+  padding: 10px 6px;
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+.judge-kpi b {
+  display: block;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1f1f1f;
+}
+.judge-kpi span {
+  font-size: 11.5px;
+  color: #8a8a8a;
+}
+.judge-note {
+  font-size: 12.5px;
+  color: #8a8a8a;
+  line-height: 1.7;
+  margin: 0 0 1em;
+}
+.judge-stale {
+  margin: 0 0 1.2em;
+  padding: 6px 10px;
+  background: #fffdf3;
+  border-left: 3px solid #e6c34a;
+  border-radius: 3px;
+}
+.judge-stale-item {
+  padding: 7px 0;
+  border-bottom: 1px dashed #efe7c9;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.judge-stale-item:last-child {
+  border-bottom: 0;
+}
+.judge-age {
+  font-size: 11px;
+  color: #a5a5a5;
+}
+.judge-hint {
+  font-size: 12px;
+  color: #9a8a4a;
+}
+.judge-pill {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 3px;
+  vertical-align: 1px;
+}
+.judge-pill.v-试用 {
+  color: #1e6b3a;
+  background: #e3f5e9;
+}
+.judge-pill.v-观望 {
+  color: #8a6a00;
+  background: #fbf0cf;
+}
+.judge-pill.v-不相关 {
+  color: #777;
+  background: #f0f0f0;
+}
+.judge-pill.v-已弃 {
+  color: #9b2c2c;
+  background: #fbe6e6;
+}
+.judge-check {
+  font-size: 11px;
+  color: #a5a5a5;
+}
+.judge-check.ok {
+  color: #2e7d32;
+}
+.judge-group {
+  margin: 0 0 10px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.judge-group summary {
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #444;
+  list-style: none;
+}
+.judge-group summary::-webkit-details-marker {
+  display: none;
+}
+.judge-date {
+  font-weight: 600;
+  color: #1f1f1f;
+}
+.judge-count {
+  font-size: 11.5px;
+  color: #9a9a9a;
+  margin-left: 6px;
+}
+.judge-list {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+.judge-list li {
+  padding: 8px 0 8px 2px;
+  border-top: 1px solid #f7f7f7;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.judge-reason {
+  font-size: 12.5px;
+  color: #666;
+  margin-top: 2px;
+}
+.judge-src {
+  font-size: 11.5px;
+  color: #a5a5a5;
+  padding-bottom: 10px;
+}
+.judge-src a {
+  color: #8a9a00;
+}
+
+/* 首页顶部「待验证」提示条 */
+.judge-bar {
+  display: block;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  background: #fafaf5;
+  border: 1px solid #eceadb;
+  border-left: 3px solid #cddc39;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+.judge-bar b {
+  color: #9b2c2c;
+}
+.judge-bar .judge-bar-go {
+  color: #7d8c00;
+  float: right;
+  font-size: 12px;
+}
+.judge-bar.stale {
+  background: #fffdf3;
+  border-left-color: #e6c34a;
+}
+.judge-pill.v-待判断 {
+  color: #4a4a4a;
+  background: #ffeec9;
+  border: 1px solid #f0d79a;
+}
