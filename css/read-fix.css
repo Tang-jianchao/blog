@@ -1,0 +1,341 @@
+/* ====================================================
+ *  read-fix.css —— 移动端 / 阅读体验修复补充样式（2026-11）
+ *  由 js/app.js 自动注入 <link>，无需改动任何 HTML 模板。
+ *  用 style.css 保持原样，便于主题升级。
+ * ==================================================== */
+/*====================================================
+  2026-11 移动端 / 阅读体验修复
+  - 中英混排断词  - 长文目录  - 表格卡片化
+  - 导航吸顶      - 首屏压缩  - 首页卡片比例
+====================================================*/
+
+/* 1. 不再把英文单词、日期、数字劈开 */
+.post .post-body,
+.post .post-body p,
+.post-content,
+.post-content p,
+.post-content li,
+.post-content blockquote,
+.post-content blockquote p,
+.post-content td,
+.post-content th,
+.post-content .brief {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+.post-content code {
+  word-break: break-all;
+}
+.post-content h2,
+.post-content h3 {
+  scroll-margin-top: 64px;
+}
+
+/* 2. 导航吸顶 */
+.main-navigation {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1035;
+}
+
+/* 3. 移动端长文目录（抽屉） */
+.mtoc-btn {
+  position: fixed;
+  left: 14px;
+  bottom: 22px;
+  z-index: 1050;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .22);
+  display: none;
+  cursor: pointer;
+}
+.mtoc-btn:active {
+  background: #111;
+}
+.mtoc-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  background: rgba(0, 0, 0, .38);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+.mtoc-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1060;
+  width: 84%;
+  max-width: 340px;
+  background: #fff;
+  transform: translateX(102%);
+  transition: transform .25s cubic-bezier(.4, 0, .2, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 30px;
+  box-shadow: -10px 0 28px rgba(0, 0, 0, .16);
+}
+.mtoc-mask.open {
+  opacity: 1;
+  visibility: visible;
+}
+.mtoc-panel.open {
+  transform: translateX(0);
+}
+.mtoc-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+.mtoc-hd strong {
+  font-size: 15px;
+  color: #222;
+}
+.mtoc-close {
+  font-size: 13px;
+  color: #888;
+  padding: 4px 2px;
+}
+.mtoc-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 10px 8px 18px;
+  counter-reset: mtoc;
+}
+.mtoc-list li {
+  counter-increment: mtoc;
+  margin: 0;
+  padding: 0;
+}
+.mtoc-list a {
+  display: block;
+  padding: 11px 4px 11px 30px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #333;
+  border-bottom: 1px solid #f4f4f4;
+  position: relative;
+}
+.mtoc-list a::before {
+  content: counter(mtoc);
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+  background: #f3f3f3;
+  border-radius: 50%;
+}
+.mtoc-list a.lv3 {
+  padding-left: 44px;
+  font-size: 13.5px;
+  color: #666;
+}
+.mtoc-list a:active {
+  background: #f7f7f7;
+}
+
+/* 4. 表格：移动端卡片化 */
+@media screen and (max-width: 767px) {
+  .mtoc-btn {
+    display: block;
+  }
+  .post-content table.m-cards {
+    display: block;
+    width: 100%;
+    table-layout: auto;
+    border: 0;
+    margin: 0 0 1em;
+  }
+  .post-content table.m-cards thead {
+    display: none;
+  }
+  .post-content table.m-cards tbody {
+    display: block;
+  }
+  .post-content table.m-cards tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px 7px;
+    border: 1px solid #e6e6e6;
+    border-left: 3px solid #cddc39;
+    border-radius: 4px;
+    background: #fafafa;
+    margin: 0 0 10px;
+    padding: 9px 10px 10px;
+  }
+  .post-content table.m-cards tr:nth-child(even) {
+    background: #fafafa;
+  }
+  .post-content table.m-cards td {
+    display: block;
+    border: 0;
+    padding: 0;
+    width: auto;
+    vertical-align: baseline;
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555;
+  }
+  .post-content table.m-cards td:nth-child(1) {
+    order: 1;
+    font-size: 11px;
+    color: #9a9a9a;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding: 1px 6px;
+    min-width: 22px;
+    text-align: center;
+  }
+  .post-content table.m-cards td:nth-child(3) {
+    order: 2;
+    font-size: 11px;
+    color: #6b7a00;
+    background: #f2f7cc;
+    border-radius: 3px;
+    padding: 1px 6px;
+  }
+  .post-content table.m-cards td:nth-child(4) {
+    order: 3;
+    font-size: 12px;
+    font-weight: 600;
+    color: #c0392b;
+  }
+  .post-content table.m-cards td:nth-child(2) {
+    order: 4;
+    flex: 0 0 100%;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f1f1f;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    margin-top: 3px;
+  }
+  .post-content table.m-cards td:nth-child(n+5) {
+    order: 5;
+    flex: 0 0 100%;
+    font-size: 13px;
+    color: #55606b;
+    line-height: 1.6;
+    margin-top: 2px;
+  }
+  .post-content table.m-fit {
+    font-size: 12.5px;
+  }
+
+  /* 5. 首屏压缩 */
+  .main-header {
+    height: 112px;
+  }
+  .main-header .main-header-box {
+    padding-top: 15px;
+  }
+  .main-header .main-header-box a.header-avatar img {
+    width: 56px;
+    height: 56px;
+  }
+  .home-template .main-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .post .post-head h1 {
+    font-size: 24px;
+    line-height: 1.32em;
+    letter-spacing: -.2px;
+  }
+  .post .post-meta {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+  .post .post-body {
+    margin-top: 12px;
+    padding: 16px 0;
+  }
+  .post-content {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+  .post-content p {
+    margin: 0 0 1em;
+  }
+  .post-content code {
+    white-space: normal;
+    word-break: break-all;
+  }
+
+  /* 7. 首屏轮播图限高 */
+  .carousel {
+    margin-bottom: 12px;
+  }
+  .carousel a {
+    display: block;
+  }
+  .carousel img {
+    max-height: 132px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 6. 首页卡片比例 */
+  .post .post-media {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 0 12px;
+  }
+  .post .post-media img {
+    object-fit: cover;
+    height: 100%;
+  }
+  .post .post-head .post-title {
+    font-size: 19px;
+    line-height: 1.4em;
+  }
+}
+
+/* 8. 桌面端表格列宽自适应（5 列等分时「看点」列过窄） */
+@media (min-width: 992px) {
+  .post-content table {
+    table-layout: auto;
+    width: 100%;
+  }
+  .post-content table th,
+  .post-content table td {
+    padding: 8px 10px;
+    min-width: 62px;
+  }
+  .post-content table th:nth-child(1),
+  .post-content table td:nth-child(1) {
+    width: 44px;
+    text-align: center;
+  }
+  .post-content table th:nth-child(4),
+  .post-content table td:nth-child(4) {
+    white-space: nowrap;
+  }
+}
