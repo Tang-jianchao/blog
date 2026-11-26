@@ -131,3 +131,131 @@ window.onload = function () {
     });
   };
 };
+
+/* ============================================================
+   2026-11 移动端 / 阅读体验修复 —— 1) 注入补充样式
+   style.css 保持主题原样；修复样式单列在 css/read-fix.css，
+   此处注入 <link>，因此无需改动任何 HTML 页面即可全站生效。
+   ============================================================ */
+(function () {
+  if (document.getElementById("read-fix-css")) return;
+  var s = document.currentScript;
+  if (!s || !s.src) {
+    var all = document.getElementsByTagName("script");
+    for (var i = all.length - 1; i >= 0; i--) {
+      if (/js\/app\.js/.test(all[i].src)) { s = all[i]; break; }
+    }
+  }
+  if (!s || !s.src) return;
+  var href = s.src.split("?")[0].replace(/js\/app\.js$/, "css/read-fix.css");
+  var l = document.createElement("link");
+  l.id = "read-fix-css";
+  l.rel = "stylesheet";
+  l.href = href;
+  (document.head || document.documentElement).appendChild(l);
+})();
+
+/* ============================================================
+   2026-11 移动端 / 阅读体验修复 —— 2) 表格卡片化 · 目录抽屉 · 标签去重 · 懒加载
+   ============================================================ */
+(function () {
+  function run() {
+    var mobile = window.matchMedia("(max-width: 767px)").matches;
+
+    /* ---- 1. 宽表格在移动端卡片化 ---- */
+    var tables = document.querySelectorAll(".post-content table");
+    Array.prototype.forEach.call(tables, function (t) {
+      if (t.closest && t.closest(".highlight")) return;
+      if (!t.rows || !t.rows.length) return;
+      var cols = t.rows[0].cells.length;
+      if (cols >= 5) {
+        t.classList.add("m-cards");
+      } else if (cols === 4) {
+        t.classList.add("m-fit");
+      }
+    });
+
+    /* ---- 2. 分类与标签重复项去重 ---- */
+    var catTexts = [];
+    Array.prototype.forEach.call(document.querySelectorAll(".category-link"), function (a) {
+      catTexts.push(a.textContent.trim());
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".tags-meta a"), function (a) {
+      if (catTexts.indexOf(a.textContent.trim()) > -1) a.parentNode.removeChild(a);
+    });
+
+    /* ---- 3. 正文图片懒加载 ---- */
+    Array.prototype.forEach.call(document.querySelectorAll(".post-content img"), function (img) {
+      if (!img.getAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+        img.setAttribute("decoding", "async");
+      }
+    });
+
+    /* ---- 4. 移动端文章目录抽屉 ---- */
+    if (!mobile) return;
+    var tocOl = document.querySelector("#article-toc ol.toc");
+    if (!tocOl) return;
+    var links = tocOl.querySelectorAll("a.toc-link");
+    if (!links.length) return;
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "mtoc-btn";
+    btn.setAttribute("aria-label", "文章目录");
+    btn.innerHTML = "<span style=\"font-size:11px;line-height:1.15;display:block\">目录</span>";
+
+    var mask = document.createElement("div");
+    mask.className = "mtoc-mask";
+
+    var panel = document.createElement("div");
+    panel.className = "mtoc-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-label", "文章目录");
+
+    var hd = document.createElement("div");
+    hd.className = "mtoc-hd";
+    hd.innerHTML = "<strong>文章目录</strong><span class=\"mtoc-close\">关闭</span>";
+
+    var list = document.createElement("ol");
+    list.className = "mtoc-list";
+    Array.prototype.forEach.call(links, function (a) {
+      var li = document.createElement("li");
+      var link = document.createElement("a");
+      link.href = a.getAttribute("href");
+      link.textContent = a.textContent.trim();
+      if (a.parentNode.classList.contains("toc-level-3")) link.className = "lv3";
+      link.addEventListener("click", function () { close(); });
+      li.appendChild(link);
+      list.appendChild(li);
+    });
+
+    panel.appendChild(hd);
+    panel.appendChild(list);
+    document.body.appendChild(btn);
+    document.body.appendChild(mask);
+    document.body.appendChild(panel);
+
+    function open() {
+      panel.classList.add("open");
+      mask.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      panel.classList.remove("open");
+      mask.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+    btn.addEventListener("click", open);
+    mask.addEventListener("click", close);
+    hd.querySelector(".mtoc-close").addEventListener("click", close);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
+  }
+})();
