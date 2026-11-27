@@ -55,7 +55,7 @@
 <div class="hide">
     <script type="text/javascript">
     var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C%2Fspan%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
     </script>
 </div>
 
@@ -82,7 +82,7 @@
             <img src="/blog/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
-            <!--<h2 class="text-hide">Snippet主题，从未如此简单有趣</h2>-->
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
             
         </div>
@@ -158,55 +158,58 @@
     
     <div class="post-body post-content">
         <p>本期由定时任务自动汇总，数据截止 2026-11-27 12:00（北京时间）。</p>
-<p>从这一期起换了做法：<strong>不再把榜单整段抄过来，只留 4 条与前端、AI 工程化、开发工具真正相关的，每条必须带一条判断</strong>。判断只有四种：试用 / 观望 / 不相关 / 已弃，落库后进 <a href="/blog/judgements/">判断台账</a>，四周未验证会被顶到台账最上面。判断多了、验证率掉了，就说明又滑回收藏模式了。</p>
+<p>从这一期起换了做法：<strong>不再把榜单整段抄过来，只留 4 条与前端、AI 工程化、开发工具真正相关的，每条必须带一条判断</strong>。判断只有四种：试用 &#x2F; 观望 &#x2F; 不相关 &#x2F; 已弃，落库后进 <a href="/blog/judgements/">判断台账</a>，四周未验证会被顶到台账最上面。判断多了、验证率掉了，就说明又滑回收藏模式了。</p>
 <p>三处口径变化先说清楚，免得你看到数字对不上：</p>
 <ul>
 <li>GitHub 官方 trending（<code>since=weekly</code>）能拿到排名与语言，但匿名调 API 的额度已被限流，<strong>本周不再标“新增 Star”</strong>，那条旧的数字本来也是估算下限，不如去掉。</li>
-<li>阮一峰周刊官方第 421 期通常在周五傍晚才发，本稿写作时尚未发布，周刊部分转引第 420 期的补遗内容（上期已写过的头条之外的部分）。</li>
+<li>阮一峰周刊第 421 期《AI 的疯狂造富》已在周五发布，周刊部分按 421 期精选；往期内容不再重复。</li>
 <li>榜单里技能包类项目继续扎堆，同类只点名不展开。</li>
 </ul>
-<h2 id="一、本周-4-条-·-方向相关"><a href="#一、本周-4-条-·-方向相关" class="headerlink" title="一、本周 4 条 · 方向相关"></a>一、本周 4 条 · 方向相关</h2><h3 id="1-ChromeDevTools-chrome-devtools-mcp（TypeScript）"><a href="#1-ChromeDevTools-chrome-devtools-mcp（TypeScript）" class="headerlink" title="1. ChromeDevTools/chrome-devtools-mcp（TypeScript）"></a>1. ChromeDevTools/chrome-devtools-mcp（TypeScript）</h3><p>把 Chrome DevTools 的能力暴露给编码代理：代理自己就能开性能面板、看网络请求、读 console 报错，不用人手截图贴给它。</p>
+<h2 id="一、本周-4-条-·-方向相关"><a href="#一、本周-4-条-·-方向相关" class="headerlink" title="一、本周 4 条 · 方向相关"></a>一、本周 4 条 · 方向相关</h2><h3 id="1-ChromeDevTools-chrome-devtools-mcp（TypeScript）"><a href="#1-ChromeDevTools-chrome-devtools-mcp（TypeScript）" class="headerlink" title="1. ChromeDevTools&#x2F;chrome-devtools-mcp（TypeScript）"></a>1. ChromeDevTools&#x2F;chrome-devtools-mcp（TypeScript）</h3><p>把 Chrome DevTools 的能力暴露给编码代理：代理自己就能开性能面板、看网络请求、读 console 报错，不用人手截图贴给它。</p>
 <p>看点在于调试链路的位移——过去是“我发现问题，描述给 AI”，现在是“AI 自己看到问题”。对前端来说，这比多一个代码补全工具更实质。</p>
 <blockquote>
 <p>判断：待判断（2026-11-27）</p>
 </blockquote>
-<h3 id="2-GoogleChrome-modern-web-guidance-src（TypeScript）"><a href="#2-GoogleChrome-modern-web-guidance-src（TypeScript）" class="headerlink" title="2. GoogleChrome/modern-web-guidance-src（TypeScript）"></a>2. GoogleChrome/modern-web-guidance-src（TypeScript）</h3><p>Chrome 团队维护的 web 平台最佳实践技能包，源码仓库。上期榜单里出现过同源的 <code>modern-web-guidance</code>（Chrome/Edge/Firefox/MDN 联合维护），本周上榜的是它的 src 仓库，覆盖 view transitions、container queries、Popover API 这类新东西。</p>
+<h3 id="2-GoogleChrome-modern-web-guidance-src（TypeScript）"><a href="#2-GoogleChrome-modern-web-guidance-src（TypeScript）" class="headerlink" title="2. GoogleChrome&#x2F;modern-web-guidance-src（TypeScript）"></a>2. GoogleChrome&#x2F;modern-web-guidance-src（TypeScript）</h3><p>Chrome 团队维护的 web 平台最佳实践技能包，源码仓库。上期榜单里出现过同源的 <code>modern-web-guidance</code>（Chrome&#x2F;Edge&#x2F;Firefox&#x2F;MDN 联合维护），本周上榜的是它的 src 仓库，覆盖 view transitions、container queries、Popover API 这类新东西。</p>
 <p>看点在于“官方把最佳实践写成 agent 的默认知识”，而不是让人去翻 MDN。</p>
 <blockquote>
 <p>判断：待判断（2026-11-27）</p>
 </blockquote>
-<h3 id="3-ag-ui-protocol-ag-ui（TypeScript）"><a href="#3-ag-ui-protocol-ag-ui（TypeScript）" class="headerlink" title="3. ag-ui-protocol/ag-ui（TypeScript）"></a>3. ag-ui-protocol/ag-ui（TypeScript）</h3><p>Agent-User Interaction Protocol：定义 agent 与前端之间的事件流（JSON Schema + TS/Python/.NET SDK），把 token 流、工具调用、human-in-the-loop 统一成一套格式。</p>
-<p>看点在于前端多了一层新接口——以前前端对接的是 REST/GraphQL，现在要对接的是“流式事件 + 可中断的工具调用”。</p>
+<h3 id="3-ag-ui-protocol-ag-ui（TypeScript）"><a href="#3-ag-ui-protocol-ag-ui（TypeScript）" class="headerlink" title="3. ag-ui-protocol&#x2F;ag-ui（TypeScript）"></a>3. ag-ui-protocol&#x2F;ag-ui（TypeScript）</h3><p>Agent-User Interaction Protocol：定义 agent 与前端之间的事件流（JSON Schema + TS&#x2F;Python&#x2F;.NET SDK），把 token 流、工具调用、human-in-the-loop 统一成一套格式。</p>
+<p>看点在于前端多了一层新接口——以前前端对接的是 REST&#x2F;GraphQL，现在要对接的是“流式事件 + 可中断的工具调用”。</p>
 <blockquote>
 <p>判断：待判断（2026-11-27）</p>
 </blockquote>
-<h3 id="4-meta-astryx（TypeScript）"><a href="#4-meta-astryx（TypeScript）" class="headerlink" title="4. meta/astryx（TypeScript）"></a>4. meta/astryx（TypeScript）</h3><p>Meta 开源的、可完全定制的设计系统，自我定位是 “agent ready”。</p>
+<h3 id="4-meta-astryx（TypeScript）"><a href="#4-meta-astryx（TypeScript）" class="headerlink" title="4. meta&#x2F;astryx（TypeScript）"></a>4. meta&#x2F;astryx（TypeScript）</h3><p>Meta 开源的、可完全定制的设计系统，自我定位是 “agent ready”。</p>
 <p>看点是设计系统的交付对象变了：以前给人写文档、给设计师出组件，现在还要让代理能正确选组件、正确用 token。</p>
 <blockquote>
 <p>判断：待判断（2026-11-27）</p>
 </blockquote>
 <h2 id="二、其余上榜-·-一句话交代"><a href="#二、其余上榜-·-一句话交代" class="headerlink" title="二、其余上榜 · 一句话交代"></a>二、其余上榜 · 一句话交代</h2><ul>
-<li><strong>强相关但没单列</strong>：<code>backnotprop/plannotator</code>（给 agent 做决策、计划、批注、代码审查的工作台）、<code>dream-num/univer</code>（前端表格 / Office SDK）、<code>alibaba/open-code-review</code>（Go，混合式代码审查，阿里内部量级验证）。</li>
+<li><strong>强相关但没单列</strong>：<code>backnotprop/plannotator</code>（给 agent 做决策、计划、批注、代码审查的工作台）、<code>dream-num/univer</code>（前端表格 &#x2F; Office SDK）、<code>alibaba/open-code-review</code>（Go，混合式代码审查，阿里内部量级验证）。</li>
 <li><strong>技能包同类扎堆</strong>：<code>google-labs-code/stitch-skills</code>、<code>obsidianmd/obsidian-skills</code>、<code>mvanhorn/last30days-skill</code>、<code>tradermonty/claude-trading-skills</code>、<code>kajisho5/ffmpeg-skill</code>。方向各不相同，共同点是把“某类领域知识 + 工具”打包成代理能直接加载的资产。</li>
-<li><strong>弱相关 / 已过滤</strong>：<code>n8n-io/nod</code>（个人 agent 跑腿：追发票、约电话、退订阅）、<code>we-promise/sure</code>（个人理财）、<code>pookjw/HermesEnabler</code>（Apple Watch 表盘）。都属于消费品或生活类，不进主体。</li>
+<li><strong>弱相关 &#x2F; 已过滤</strong>：<code>n8n-io/nod</code>（个人 agent 跑腿：追发票、约电话、退订阅）、<code>we-promise/sure</code>（个人理财）、<code>pookjw/HermesEnabler</code>（Apple Watch 表盘）。都属于消费品或生活类，不进主体。</li>
 </ul>
 <h2 id="三、热点主题归纳"><a href="#三、热点主题归纳" class="headerlink" title="三、热点主题归纳"></a>三、热点主题归纳</h2><p><strong>1. 技能包进入“官方背书 + 垂直分工”阶段。</strong> 上周还是通用 Agent Skills 扎堆，本周 Chrome、Meta、Obsidian、Google Labs 各自出官方版本；覆盖面从“怎么写代码”变成“怎么用某个具体平台”。</p>
 <p><strong>2. 前端正在被协议化。</strong> 一边是 <code>ag-ui</code> 定义 agent 与前端的标准事件流，一边是 DevTools 被代理接管。前端的调用方从“人点按钮”变成“代理调接口”，这会影响组件怎么设计、状态怎么暴露。</p>
 <p><strong>3. 瓶颈已经挪到“审代码”。</strong> 榜单里 <code>plannotator</code>、<code>open-code-review</code>、上一期的 <code>Claude-BugHunter</code> 都在解决“审”，与周刊引用的哈佛结论（AI 编码把瓶颈从写代码转到代码审查）互为印证。<strong>这条对你是最直接的信号：团队里下一个值得投入的工具，大概率不是生成代码的，而是审代码的。</strong></p>
-<h2 id="四、阮一峰周刊-·-第-420-期（方向精选）"><a href="#四、阮一峰周刊-·-第-420-期（方向精选）" class="headerlink" title="四、阮一峰周刊 · 第 420 期（方向精选）"></a>四、阮一峰周刊 · 第 420 期（方向精选）</h2><p>第 421 期未发，这里只补上期没细说的部分：</p>
-<ul>
-<li><strong>头条《最分心的一年》</strong>：注意力被切碎的一年，结论是“你的目标不是去做很多事情，而是做成最重要的事情”。这跟本期减条目、加判断是同一件事。</li>
-<li><strong>文章《多智能体系统的三种模式》</strong>：管道式（做完一步移交）、编排式（编排器指挥）、白板式（各自读白板自由行动）。你现在做的定时任务 + 子代理，本质是编排式。</li>
-<li><strong>文章《检查空格有多难？》</strong>：Unicode 空白字符在 Python / Java / JavaScript 里要过滤干净各有坑，前端做输入清洗可以直接对照。</li>
-<li><strong>工具 Srcbook</strong>：面向 TypeScript / JavaScript 的交互式笔记本，类似 Jupyter 但给前端用。</li>
-<li><strong>言论</strong>：哈佛研究团队认为，AI 编码让软件开发的瓶颈从“编写代码”转移到“代码审查”。</li>
+<h2 id="四、阮一峰周刊-·-第-421-期《AI-的疯狂造富》（方向精选）"><a href="#四、阮一峰周刊-·-第-421-期《AI-的疯狂造富》（方向精选）" class="headerlink" title="四、阮一峰周刊 · 第 421 期《AI 的疯狂造富》（方向精选）"></a>四、阮一峰周刊 · 第 421 期《AI 的疯狂造富》（方向精选）</h2><ul>
+<li><strong>头条《AI 的疯狂造富》</strong>：Anthropic 上市，一次性造出 600 位亿万富翁，多数二三十岁；2023 年入职的那批人，期权中位数 1.51 亿美元。文章提炼出两条老规矩——在上市前两年加入一家即将上市的公司拿期权，且这家公司的业务在上市时正当风口，<strong>“时势的托举大于个人努力”</strong>。</li>
+<li><strong>编程模型排名</strong>：有人用 17 个编码基准做了综合排名，前三 Fable 5.2 &#x2F; Astra 6.2 &#x2F; Neon 4；国产最高是 Qwen 4 Max（第 10）、Kimi K3.1 Pro（第 12）、Deepseek V.1 Flash（第 14）。榜单不能当选型依据，但可以当“哪些模型值得花一天试”的线索。</li>
+<li><strong>文章《CSS Mixin 之美》</strong>：CSS 原生 mixin 的用法与边界，可以直接对照现在组件库的样式组织方式看一遍。</li>
+<li><strong>文章《我不再把 SSH 私钥保存在磁盘上》</strong>：把私钥挪出磁盘的做法，一人多机、经常换环境的场景很实用。</li>
+<li><strong>文章《如何用 Unsloth 运行本地模型》</strong>：本地跑模型的入门路径，跟先前折腾 Qwen 本地部署是同一类需求。</li>
+<li><strong>工具 Plasmo</strong>：开发 Chrome 扩展的框架，自带 HMR 与多浏览器打包。浏览器扩展是前端少数还没被 AI 重写过的分发渠道。</li>
+<li><strong>工具 GuestPass</strong>：把 Claude Code &#x2F; Codex &#x2F; Gemini CLI 的会话变成一个链接，别人打开就能实时看、实时操作，走 Cloudflare tunnel，不用装 agent。团队里做 AI coding 协作可以直接用。</li>
+<li><strong>工具 Ladybird</strong>：从零写引擎的开源浏览器发布 alpha 版，作者判断它可能取代 Firefox 的位置。</li>
+<li><strong>言论</strong>：大模型使用者分两种——用模型放大自身能力的人，和只当“人肉代理”、把需求丢进输入框点生成的人。这条基本就是判断台账存在的理由。</li>
 </ul>
-<h2 id="五、判断台账已上线"><a href="#五、判断台账已上线" class="headerlink" title="五、判断台账已上线"></a>五、判断台账已上线</h2><p>新增 <a href="/blog/judgements/">/blog/judgements/</a>：所有判断按周汇总，页面顶部四个数字——累计判断 / 已验证 / 待验证 / 验证率；超过四周没验证的判断会被单独顶到“该回头看了”区块，并附一句追问（“试了吗？”“还值得等吗？”）。</p>
+<h2 id="五、判断台账已上线"><a href="#五、判断台账已上线" class="headerlink" title="五、判断台账已上线"></a>五、判断台账已上线</h2><p>新增 <a href="/blog/judgements/">&#x2F;blog&#x2F;judgements&#x2F;</a>：所有判断按周汇总，页面顶部四个数字——累计判断 &#x2F; 已验证 &#x2F; 待验证 &#x2F; 验证率；超过四周没验证的判断会被单独顶到“该回头看了”区块，并附一句追问（“试了吗？”“还值得等吗？”）。</p>
 <p>首页顶部会出现一条“有 N 条判断待验证”的提示，没处理就一直挂着。</p>
 <h2 id="本周方向无关速览"><a href="#本周方向无关速览" class="headerlink" title="本周方向无关速览"></a>本周方向无关速览</h2><ul>
-<li>美国出现按片下单的芯片流片网站，最小 1000 片、每片 2 美元起。</li>
-<li>美国拟立法要求先进芯片加入定位功能，需要操作系统配合，用于追踪芯片去向。</li>
-<li>黄仁勋事件的长篇分析（Stratechery）在英文技术圈刷屏。</li>
+<li>Signal 上线“防截图”功能：微软和苹果都已默认自动截屏用于训练模型，Signal 索性让系统截不到它的窗口。</li>
+<li>维基百科公布真人访问量：2025 年起一路下滑，已创新低——搜索与 AI 摘要正在吃掉它的流量。</li>
+<li>手指鼠标（99 美元，必须插线）与“重力通信”实验（每分钟传 1 bit，无法被屏蔽）：好玩，但与你的方向无关。</li>
 </ul>
 <hr>
 <p>本期还留了 4 条判断未定。你在手机上说一句“第 1 条试用、第 2 条观望”，我就把它们落库、更新台账和这条博文的判断块。</p>
@@ -229,10 +232,10 @@
 <div class="article-nav prev-next-wrap clearfix">
     
     
-    <a href="/blog/2026/11/20/weekly-report-2026-11-20/" class="next-post btn btn-default" title='科技周刊 #420｜GitHub 周榜 & 本周热点（2026-11-20）'>
+    <a href="/blog/2026/11/20/weekly-report-2026-11-20/" class="next-post btn btn-default" title='科技周刊 #420｜GitHub 周榜 &amp; 本周热点（2026-11-20）'>
         <span class="hidden-lg">下一篇</span>
         <span class="hidden-xs">
-            科技周刊 #420｜GitHub 周榜 & 本周热点（2026-11-20）</span><i class="fa fa-angle-right fa-fw"></i>
+            科技周刊 #420｜GitHub 周榜 &amp; 本周热点（2026-11-20）</span><i class="fa fa-angle-right fa-fw"></i>
     </a>
     
 </div>
@@ -266,7 +269,7 @@
             文章目录
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%9C%AC%E5%91%A8-4-%E6%9D%A1-%C2%B7-%E6%96%B9%E5%90%91%E7%9B%B8%E5%85%B3"><span class="toc-text">一、本周 4 条 · 方向相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ChromeDevTools-chrome-devtools-mcp%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">1. ChromeDevTools/chrome-devtools-mcp（TypeScript）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GoogleChrome-modern-web-guidance-src%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">2. GoogleChrome/modern-web-guidance-src（TypeScript）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ag-ui-protocol-ag-ui%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">3. ag-ui-protocol/ag-ui（TypeScript）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-meta-astryx%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">4. meta/astryx（TypeScript）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%B6%E4%BD%99%E4%B8%8A%E6%A6%9C-%C2%B7-%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BA%A4%E4%BB%A3"><span class="toc-text">二、其余上榜 · 一句话交代</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%83%AD%E7%82%B9%E4%B8%BB%E9%A2%98%E5%BD%92%E7%BA%B3"><span class="toc-text">三、热点主题归纳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%98%AE%E4%B8%80%E5%B3%B0%E5%91%A8%E5%88%8A-%C2%B7-%E7%AC%AC-420-%E6%9C%9F%EF%BC%88%E6%96%B9%E5%90%91%E7%B2%BE%E9%80%89%EF%BC%89"><span class="toc-text">四、阮一峰周刊 · 第 420 期（方向精选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%88%A4%E6%96%AD%E5%8F%B0%E8%B4%A6%E5%B7%B2%E4%B8%8A%E7%BA%BF"><span class="toc-text">五、判断台账已上线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%91%A8%E6%96%B9%E5%90%91%E6%97%A0%E5%85%B3%E9%80%9F%E8%A7%88"><span class="toc-text">本周方向无关速览</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%9C%AC%E5%91%A8-4-%E6%9D%A1-%C2%B7-%E6%96%B9%E5%90%91%E7%9B%B8%E5%85%B3"><span class="toc-text">一、本周 4 条 · 方向相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ChromeDevTools-chrome-devtools-mcp%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">1. ChromeDevTools&#x2F;chrome-devtools-mcp（TypeScript）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GoogleChrome-modern-web-guidance-src%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">2. GoogleChrome&#x2F;modern-web-guidance-src（TypeScript）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ag-ui-protocol-ag-ui%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">3. ag-ui-protocol&#x2F;ag-ui（TypeScript）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-meta-astryx%EF%BC%88TypeScript%EF%BC%89"><span class="toc-text">4. meta&#x2F;astryx（TypeScript）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%B6%E4%BD%99%E4%B8%8A%E6%A6%9C-%C2%B7-%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BA%A4%E4%BB%A3"><span class="toc-text">二、其余上榜 · 一句话交代</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%83%AD%E7%82%B9%E4%B8%BB%E9%A2%98%E5%BD%92%E7%BA%B3"><span class="toc-text">三、热点主题归纳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%98%AE%E4%B8%80%E5%B3%B0%E5%91%A8%E5%88%8A-%C2%B7-%E7%AC%AC-421-%E6%9C%9F%E3%80%8AAI-%E7%9A%84%E7%96%AF%E7%8B%82%E9%80%A0%E5%AF%8C%E3%80%8B%EF%BC%88%E6%96%B9%E5%90%91%E7%B2%BE%E9%80%89%EF%BC%89"><span class="toc-text">四、阮一峰周刊 · 第 421 期《AI 的疯狂造富》（方向精选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%88%A4%E6%96%AD%E5%8F%B0%E8%B4%A6%E5%B7%B2%E4%B8%8A%E7%BA%BF"><span class="toc-text">五、判断台账已上线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%91%A8%E6%96%B9%E5%90%91%E6%97%A0%E5%85%B3%E9%80%9F%E8%A7%88"><span class="toc-text">本周方向无关速览</span></a></li></ol>
         
     </div>
 </aside>
